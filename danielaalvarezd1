@@ -1,0 +1,34 @@
+# ¿Cuantas vueltas deben darse para cerrar la puerta completamente?
+#datos Lp= 500 cms o (5 mtr) am=1200 cms d=100 cms tm=2 min(120 seg)
+largo_puerta = float(input('INGRESAR EL LARGO DE LA PUERTA: '))
+diametro_polea =float(input('INGRESE EL DIAMETRO DE LA POLEA: '))
+altura_muro =float(input('INGRESE ALTURA MURO: '))
+tiempo_minutos = float(input('INGRESE EL MAXIMO DE MINUTOS:'))
+
+# vueltas = largo_puerta/diametro_polea
+
+longitud_cuerda =(largo_puerta**2 + altura_muro**2)**0.5
+longitud_circulo_polea = (3.1416) * diametro_polea
+distancia_cuerda_enrollada = longitud_cuerda - (altura_muro - largo_puerta)
+numero_vueltas_polea = int(distancia_cuerda_enrollada /longitud_circulo_polea)
+
+print ('*********')
+print ('*longitud de la cuerda: ', longitud_cuerda)
+print ('*longitud del circulo de la polea : ',longitud_circulo_polea)
+print ('*Distancia cuerda enrrollada: ',distancia_cuerda_enrollada)
+print ('*********')
+
+
+# ¿Cuantas vueltas deben darse para cerrar la puerta completamente?
+#datos Lp= 500 cms o (5 mtr) am=1200 cms d=100 cms tm=2 min(120 seg)
+print('El numero de vueltas de la polea es: ' ,numero_vueltas_polea)
+
+#cuántos Chewbacca solo puede girar la polea 3 veces antes de caer exhausto ¿Cuántos Chewbaccas se necesitan para cerrar la puerta?
+ 
+numero_chewbaccas  = numero_vueltas_polea / 3 
+print('el numero de chewbaccas necesarios es : ' ,numero_chewbaccas)
+    
+#Si se desea cerrar la puerta en un número máximo de minutos,que también nos dan, ¿A qué velocidad deben girar la polea (cms/seg) para poder cerrarla en ese tiempo?
+velocidad_cierre_puerta = distancia_cuerda_enrollada / (tiempo_minutos * 60)
+
+print('El numero de la velocidad es:',velocidad_cierre_puerta)
